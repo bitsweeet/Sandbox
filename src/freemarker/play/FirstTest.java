@@ -58,7 +58,7 @@ public class FirstTest {
 		latest.put("name", "green mouse");
 		
 		root.put("shipMethods", getShippingMethodsCol());
-		root.put("selected", getSelectedShipMethods());
+		root.put("selected", getSelectedShipMethodsValues());
 		
 		return root;
 	}

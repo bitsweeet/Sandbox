@@ -8,7 +8,7 @@
   <p>Our latest product:
   <a href="${latestProduct.url}">${latestProduct.name}</a>!
   <#list shipMethods as sm>
-     <br><input type="checkbox" name="${sm.code}" id="${sm.code}" <#list selected?keys as selsm><#if sm.code==selsm><@ck b=selected[selsm]/></#if></#list> value="${sm.description}"/>
+     <br><input type="checkbox" name="${sm.code}" id="${sm.code}" <#list selected as selsm><#if sm.code==selsm><@ck b=(sm.code==selsm)/></#if></#list> value="${sm.description}"/>
          ${sm.description}
   </#list>
 </body>
