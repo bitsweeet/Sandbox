@@ -8,8 +8,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import freemarker.template.Configuration;
 import freemarker.template.DefaultObjectWrapper;
@@ -58,7 +60,7 @@ public class FirstTest {
 		latest.put("name", "green mouse");
 		
 		root.put("shipMethods", getShippingMethodsCol());
-		root.put("selected", getSelectedShipMethodsValues());
+		root.put("selected", getSelectedShipMethodSet());
 		
 		return root;
 	}
@@ -80,11 +82,29 @@ public class FirstTest {
 		return selected;
 	}
 	
-	private List<String> getSelectedShipMethodsValues() {
+	private List<String> getSelectedShipMethodsStrings() {
 		List<String> selected = new ArrayList<String>();
 		
 		selected.add(ShipMethod.SecondDay.getCode());
 		selected.add(ShipMethod.PriorityOvernight.getCode());
+		
+		return selected;
+	}
+	
+	private List<ShipMethod> getSelectedShipMethodsValues() {
+		List<ShipMethod> selected = new ArrayList<ShipMethod>();
+		
+		selected.add(ShipMethod.SecondDay);
+		selected.add(ShipMethod.PriorityOvernight);
+		
+		return selected;
+	}
+	
+	private Set<ShipMethod> getSelectedShipMethodSet() {
+		Set<ShipMethod> selected = new HashSet<ShipMethod>();
+		
+		selected.add(ShipMethod.SecondDay);
+		selected.add(ShipMethod.PriorityOvernight);
 		
 		return selected;
 	}

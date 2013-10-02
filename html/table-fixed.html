@@ -1,0 +1,65 @@
+<html>
+  <head>
+	<style>
+		table.fixed { taable-layout:fixed;border-collapse:collapse; }
+		table.fixed tbody td { overflow: hidden; vertical-align:top;border:1px solid black;white-space:nowrap;}
+		table.fixed thead th { overflow: hidden; border:1px solid black;white-space:nowrap; }
+	</style>
+  </head>
+  <body>
+	<table class="fixed" width="100%">
+		<thead>
+			<tr>
+				<th>Serial Number</th>
+				<th>Vendor</th>
+				<th>Attribute</th>
+				<th>DP</th>
+				<th style="text-align:center;">Return Reason</th>
+				<th>Shipping</th>
+				<th>Replace</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>09-593407</td>
+				<td>Eden Prarie West EC</td>
+				<td rowspan="2">
+					<dl>
+						<dt>Diopter</dt>
+						<dd>21.50</dd>
+					</dl>
+				</td>
+				<td>No</td>
+				<td>
+					<select style="float:right">
+						<option>Lens is defective</option>
+						<option>Jammed into injector / injector problem</option>
+					</select>
+				</td>
+				<td>
+					<select>
+						<option>2nd Day</option>
+						<option>Overnight</option>
+					</select>
+				</td>
+				<td>
+					<select>
+						<option>No</option>
+						<option>Yes</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>
+					<input type="text" style="float:right;"/>
+					<label style="float:right;"><strong>*</strong></label>
+					<label style="float:right;">Comment</label>
+				</td>
+				<td colspan="2">&nbsp;</td>
+			</tr>
+		</tbody>
+	</table>
+  </body>
+</html>
