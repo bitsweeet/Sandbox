@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
+import java.util.Map;
 
 import freemarker.template.Configuration;
 import freemarker.template.DefaultObjectWrapper;
@@ -14,24 +15,21 @@ public abstract class BaseTest {
 	/**
 	 * @param args
 	 */
-	public static void main(String[] args) {
+	public void doIt() {
 //		returns.shipping.label.ftl
 		
 		try {
-			FirstTest test = new FirstTest();
-			Configuration cfg = test.initialize();
+			Configuration cfg = initialize();
 			
 			Template temp = cfg.getTemplate("test.ftl");
 			
 			Writer out = new OutputStreamWriter(System.out);
-			temp.process(test.getModel(), out);
+			temp.process(getModel(), out);
 			out.flush();
 			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
-		System.exit(0);
 	}
 	
 	private Configuration initialize() throws IOException {
@@ -41,5 +39,5 @@ public abstract class BaseTest {
 		return cfg;
 	}
 	
-	abstract protected BaseTest createMe();
+	protected abstract Map<String,Object> getModel();
 }
